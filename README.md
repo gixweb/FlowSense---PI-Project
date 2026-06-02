@@ -1,9 +1,6 @@
 # FlowSense - PI-Project
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) [![Hardware](https://img.shields.io/badge/hardware-ESP32%20%7C%20Arduino-orange)](https://www.espressif.com/en/products/socs/esp32) [![Arduino](https://img.shields.io/badge/IDE-Arduino-blue)](https://arduino.org/) 
 
-
-FlowSense is an affordable, IoT monitoring and control system for leisure and study Senac Pernambuco college. Developed as a final project for the **IoT and Embedded Systems** course at Senac Pernambuco college. 
-
 ### Class: tad40
 ## Professors and Ucs:
 
@@ -24,28 +21,60 @@ Maria Renay - Software Engineering
 
 ## 📋 Project Overview 
 
-Estruturação do Hardware Base: Montamos o cérebro do projeto usando o ESP32-C3 SuperMini integrado a um sensor ultrassônico (HC-SR04) e um LED de sinalização na protoboard, corrigindo o fluxo de energia nas colunas da placa.
+**FlowSense** is an affordable, IoT monitoring and control system for leisure and study rooms in Senac Pernambuco college. Developed as a final project for the **IoT and Embedded Systems** course at Senac Pernambuco college. 
 
-Resolução de Gargalos de Comunicação: * Ativamos o USB CDC para permitir a leitura de dados no computador.
+Our solution utilizes an **ESP32 microcontroller** to gather sensor data, publish it to a cloud dashboard via **MQTT**, and automatically trigger the occupation levels in rooms in Senac Pernambuco college
 
-Ajustamos a limitação de hardware do ESP32 conectando-o exclusivamente a uma rede Wi-Fi de 2.4 GHz.
 
-Trocamos o servidor MQTT público inicial por um mais robusto (broker.emqx.io) para acabar com as falhas de conexão (erro rc=-2).
+### Key Features 
 
-Lógica de Entrada Validada: Configuramos o sensor atual para atuar como o registro de entrada. Ele detecta a presença, acende o LED verde de liberação, soma +1 na ocupação e publica essa informação em tempo real na nuvem.
+* **Real-time Monitoring:** Tracks the level of occupation in tbe rooms. 
 
-Simulador de Testes: Criamos um "botão virtual" (usando o pino 4) para simular a saída de pessoas, permitindo testar a matemática de ocupação do código sem precisar do segundo sensor agora.
+* **Automated Alert** Activates Leds to alert the entry and de exit people on the rooms. 
+
+* **Cloud Dashboard:** Visually track historical data and system status from anywhere using Adafruit IO / Blynk. 
+
+* **Fail-Safe Mode:** Local offline logic continues running even if Wi-Fi connection is lost. 
+
+ 
 
 
 ## 🛠️ Hardware Components & Architecture 
 
+Components Used: 
+**Microcontroller**
+- **ESP32-C3 Supermini**
+**Sensors**
+- 2 **ultrassonic sensors** (HC-SR04)
+- sinalization **LEDs**
+
+### System Architecture 
+
+The ESP32 reads data from ultrassonic sensors pins, processes the entry and the exits loops locally, detecting the presence of people and lights the green one LED for access release adding 1 on occupation, and transmits the payload over **MQTT** (broker.emqx.io) protocol via Wi-Fi to the cloud broker.
+
+Tests Phase: Created a "virtual button" (pin 4) for simulate the entry and exit people, allowing testing the occupation math code
+
+Resolution Comunication Problems: Activating a USB CDC for reading data on computer
 
 
 ## 💻 Tech Stack & Software 
 
+* **Embedded Programming:** C++, Arduino Framework, PlatformIO IDE 
 
+* **IoT Protocols:** MQTT, HTTP 
+
+* **Cloud Dashboard & Broker:** Azure (or Node-RED / HiveMQ) 
+
+* **Libraries Used:**
+  * `PubSubClient.h` (MQTT communication) 
+
+  * `ESP32Servo.h` (PWM control for ESP32) 
+
+  * `WiFi.h` (Wifi Conecction)
+  
 
 ## ⚙️ Getting Started (Local Setup) 
+
 
 
 
