@@ -19,7 +19,7 @@ Arnott Caiado - Mobile
 Maria Renay - Software Engineering
 
 
-## 📋 Project Overview 
+## Project Overview 
 
 **FlowSense** is an affordable, IoT monitoring and control system for leisure and study rooms in Senac Pernambuco college. Developed as a final project for the **IoT and Embedded Systems** course at Senac Pernambuco college. 
 
@@ -39,7 +39,7 @@ Our solution utilizes an **ESP32 microcontroller** to gather sensor data, publis
  
 
 
-## 🛠️ Hardware Components & Architecture 
+## Hardware Components & Architecture 
 
 Components Used: 
 **Microcontroller**
@@ -57,7 +57,7 @@ Tests Phase: Created a "virtual button" (pin 4) for simulate the entry and exit 
 Resolution Comunication Problems: Activating a USB CDC for reading data on computer
 
 
-## 💻 Tech Stack & Software 
+## Tech Stack & Software 
 
 * **Embedded Programming:** C++, Arduino Framework, PlatformIO IDE 
 
@@ -71,14 +71,54 @@ Resolution Comunication Problems: Activating a USB CDC for reading data on compu
   * `ESP32Servo.h` (PWM control for ESP32) 
 
   * `WiFi.h` (Wifi Conecction)
-  
 
-## ⚙️ Getting Started (Local Setup) 
+ ### Technicals Diagrams
+
+<img width="1464" height="600" alt="diagrama de sequência Flowsense 1" src="https://github.com/user-attachments/assets/9323c4ea-7a5c-4824-b187-7c24e9d29660" />
+
+### Firmware Fluxogram
+
+```
+[ Start / Boot ESP32 ]
+           │
+           ▼
+┌───► [ Main Loop ]
+│          │
+│          ▼
+│     [ Read First Ultrasonic Sensor ]
+│          │
+│          ▼
+│     [ Read Second Ultrasonic Sensor ]
+│          │
+│          ▼
+│     /      Has someone passed      \
+│    <          through the door?     >
+│     \         Which direction?     /
+│                    │
+│        Left (Exit) ┌────┴────┐ Right (Entry)
+│                    │         │
+│                    ▼         ▼
+│         [ EXIT ACTION ]     [ ENTRY ACTION ]
+│         • Turn on Red LED   • Turn on Green LED
+│         • Count -1 in app   • Count +1 in app
+│                    │         │
+└────────────────────┴─────────┘
+
+```
+
+
+## Getting Started (Local Setup) 
 
 
 
 
-## 👥 Authors (Team Members) 
+## Midia
+
+### Thinkercad Simulation
+<img width="928" height="605" alt="image" src="https://github.com/user-attachments/assets/1c0908ca-3a3a-437c-9d9f-ca8d7bcb8be5" />
+
+
+## Authors (Team Members) 
 
 Alanna Santos - Hardware & Wiring Specialist - GitHub 
 
