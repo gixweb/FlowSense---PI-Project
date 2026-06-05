@@ -9,11 +9,11 @@
 | Professor | UC | where it is evidenced in the project |
 | --- | --- | --- |
 | Ronierison Maciel | Cloud Computing | APP Conection with Azure |
-| Paulo Guimarães | Consumer behavior |  |
-| Leonardo Trevas | English | Dado C2 |
-| Paulo Pimentel | Information Security | Dado C2 |
-| Arnott Caiado | IOT & Mobile | Dado C2 |
-| Maria Renay | Software Engineering & QA | Dado C2 |
+| Paulo Guimarães | Consumer behavior | Market research |
+| Leonardo Trevas | English | This document in English |
+| Paulo Pimentel | Information Security | Data Security with Cloud |
+| Arnott Caiado | IOT & Mobile | IOT Material and Mobile First |
+| Maria Renay | Software Engineering & QA | API development and applied testing |
 
 
 ## Project Overview 
@@ -70,7 +70,40 @@ Resolution Comunication Problems: Activating a USB CDC for reading data on compu
 
 ## Getting Started (Local Setup) 
 
+Follow these instructions to replicate our hardware project locally. 
 
+ 
+
+### 1. Prerequisites & Software Installation 
+
+Install [VS Code](https://code.visualstudio.com/)
+
+
+### 2. Configuration (`src/config.h`) 
+
+Duplicate the `src/config.example.h` file, rename it to `src/config.h`, and fill in your network and API credentials: 
+
+```cpp 
+
+// Wi-Fi Configuration 
+
+#define WIFI_SSID "Your_WiFi_Name" 
+
+#define WIFI_PASS "Your_WiFi_Password" 
+
+ 
+
+// MQTT Broker Configuration (Adafruit IO Example) 
+
+#define MQTT_SERVER "io.adafruit.com" 
+
+#define MQTT_PORT 1883 
+
+#define MQTT_USER "your_adafruit_username" 
+
+#define MQTT_KEY "your_adafruit_aio_key" 
+
+```
 
  ### Technicals Diagrams
 
