@@ -1,22 +1,19 @@
 # FlowSense - PI-Project
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) [![Hardware](https://img.shields.io/badge/hardware-ESP32%20%7C%20Arduino-orange)](https://www.espressif.com/en/products/socs/esp32) [![Arduino](https://img.shields.io/badge/IDE-Arduino-blue)](https://arduino.org/) 
 
+[Requirements documentation](https://senacpernambuco-my.sharepoint.com/:w:/r/personal/giselly_lima_edu_pe_senac_br/Documents/Requisitos%20de%20Sistema.docx?d=wf4bab07e0e574bdf84d5feb99323ba74&csf=1&web=1&e=VHn55A)
+
 ### Class: tad40
 ## Professors and Ucs:
 
-Ronierison - Cloud Computing
-
-Paulo - Consumer behavior 
-
-Leonardo Trevas - English
-
-Arnott Caiado - Internet of things (IOT)
-
-Paulo Guimarães - Information Security
-
-Arnott Caiado - Mobile
-
-Maria Renay - Software Engineering
+| Professor | UC | where it is evidenced in the project |
+| --- | --- | --- |
+| Ronierison Maciel | Cloud Computing | APP Conection with Azure |
+| Paulo Guimarães | Consumer behavior |  |
+| Leonardo Trevas | English | Dado C2 |
+| Paulo Pimentel | Information Security | Dado C2 |
+| Arnott Caiado | IOT & Mobile | Dado C2 |
+| Maria Renay | Software Engineering & QA | Dado C2 |
 
 
 ## Project Overview 
@@ -36,8 +33,6 @@ Our solution utilizes an **ESP32 microcontroller** to gather sensor data, publis
 
 * **Fail-Safe Mode:** Local offline logic continues running even if Wi-Fi connection is lost. 
 
- 
-
 
 ## Hardware Components & Architecture 
 
@@ -47,6 +42,7 @@ Components Used:
 **Sensors**
 - 2 **ultrassonic sensors** (HC-SR04)
 - sinalization **LEDs**
+
 
 ### System Architecture 
 
@@ -71,6 +67,10 @@ Resolution Comunication Problems: Activating a USB CDC for reading data on compu
   * `ESP32Servo.h` (PWM control for ESP32) 
 
   * `WiFi.h` (Wifi Conecction)
+
+## Getting Started (Local Setup) 
+
+
 
  ### Technicals Diagrams
 
@@ -106,16 +106,16 @@ Resolution Comunication Problems: Activating a USB CDC for reading data on compu
 
 ```
 
-
-## Getting Started (Local Setup) 
-
+### Eletric Scheme
+<img width="913" height="554" alt="image" src="https://github.com/user-attachments/assets/e9517153-c7e8-4d99-956c-88792f4018ca" />
 
 
 
 ## Midia
 
 ### Thinkercad Simulation
-<img width="928" height="605" alt="image" src="https://github.com/user-attachments/assets/1c0908ca-3a3a-437c-9d9f-ca8d7bcb8be5" />
+<img width="797" height="692" alt="image" src="https://github.com/user-attachments/assets/ab2b11c4-85b9-4534-a5b9-e7df508f30ff" />
+
 
 
 ## Authors (Team Members) 
