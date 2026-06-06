@@ -55,7 +55,7 @@ Resolution Comunication Problems: Activating a USB CDC for reading data on compu
 
 ## Tech Stack & Software 
 
-* **Embedded Programming:** C++, Arduino Framework, PlatformIO IDE 
+* **Embedded Programming:** C++, Arduino Framework, PlatformIO IDE, VSCode, NodeJS
 
 * **IoT Protocols:** MQTT, HTTP 
 
@@ -72,36 +72,42 @@ Resolution Comunication Problems: Activating a USB CDC for reading data on compu
 
 Follow these instructions to replicate our hardware project locally. 
 
- 
+The project is structured into two main layers, utilizing the following libraries and technologies:
+
 
 ### 1. Prerequisites & Software Installation 
 
-Install [VS Code](https://code.visualstudio.com/)
+- Install [VS Code](https://code.visualstudio.com/)
+- Install [NodeJS](https://nodejs.org/en/download)
+- Install [ArduinoIDE](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE)
 
+### 2. The Layers
 
-### 2. Configuration (`src/config.h`) 
+#### **Firmware Layer (C++ / Arduino IDE)**
+* **`WiFi.h`**: A native library used to establish the connection between the ESP32 and the local wireless network.
+* **`PubSubClient.h`**: A core client library used to enable MQTT communication, allowing the microcontroller to publish occupancy count data to a specific topic (`senac/flowsense/ocupacao`).
 
-Duplicate the `src/config.example.h` file, rename it to `src/config.h`, and fill in your network and API credentials: 
+#### **Software / Backend Layer (Node.js / VS Code)**
+* **`mqtt`**: Allows the Node.js server to act as an MQTT client for Mosquitto, actively listening to incoming data published by the ESP32 board.
+* **`express`**: A minimalist web framework used to spin up the API and manage application routes.
+* **`socket.io`**: Enables a bidirectional, real-time communication channel with the frontend, ensuring the occupancy numbers update instantly on the user's screen without requiring a page refresh.
+
+#### **Messaging Infrastructure**
+* **Eclipse Mosquitto**: Used as the central MQTT Broker to handle data transmission between the hardware and backend.
+
+### 3. Configuration (`src/config.h`)
+Duplicate the `src/config.example.h` file, rename it to `src/config.h`, and fill in your network and MQTT credentials: 
 
 ```cpp 
-
 // Wi-Fi Configuration 
-
 #define WIFI_SSID "Your_WiFi_Name" 
-
 #define WIFI_PASS "Your_WiFi_Password" 
 
- 
-
-// MQTT Broker Configuration (Adafruit IO Example) 
-
-#define MQTT_SERVER "io.adafruit.com" 
-
+// MQTT Broker Configuration (Example using a local/private Mosquitto broker) 
+#define MQTT_SERVER "YOUR_BROKER_IP_OR_HOST" // e.g., "192.168.1.50" or "localhost"
 #define MQTT_PORT 1883 
-
-#define MQTT_USER "your_adafruit_username" 
-
-#define MQTT_KEY "your_adafruit_aio_key" 
+#define MQTT_USER "your_mqtt_username"       // Leave empty if no authentication is required
+#define MQTT_KEY "your_mqtt_password"
 
 ```
 
@@ -149,14 +155,23 @@ Duplicate the `src/config.example.h` file, rename it to `src/config.h`, and fill
 ### Thinkercad Simulation
 <img width="797" height="692" alt="image" src="https://github.com/user-attachments/assets/ab2b11c4-85b9-4534-a5b9-e7df508f30ff" />
 
-### Entry Registrs on Serial Monitor
+### Entry Registrs on Serial Monitor in Arduino IDE
 <img width="630" height="205" alt="image" src="https://github.com/user-attachments/assets/23929b05-9d59-4816-bd89-e418bccc740a" />
 
-### Exit Registers on Serial Monitor
+### Exit Registers on Serial Monitor in Arduino IDE
 <img width="625" height="201" alt="image2" src="https://github.com/user-attachments/assets/2980a7e3-b0ed-41dc-a2fe-065bca7d0907" />
 
+### Server Conection
+<img width="900" height="365" alt="WhatsApp Image 2026-06-06 at 20 03 00" src="https://github.com/user-attachments/assets/6524b2f0-ff5b-43f3-a66d-6971d2a6f387" />
 
 
+### Entry and Exit in Arduino IDE
+<img width="1600" height="900" alt="WhatsApp Image 2026-06-06 at 20 08 01" src="https://github.com/user-attachments/assets/16196390-a745-412f-b759-3a3819aa8faa" />
+
+
+### Results
+<img width="900" height="276" alt="WhatsApp Image 2026-06-06 at 20 03 00 (2)" src="https://github.com/user-attachments/assets/cf7aea48-966a-476b-b65c-7567c4af66f2" />
+<img width="900" height="345" alt="WhatsApp Image 2026-06-06 at 20 02 59" src="https://github.com/user-attachments/assets/3755971e-7a98-4a85-860a-706782043057" />
 
 
 ## Authors (Team Members) 
