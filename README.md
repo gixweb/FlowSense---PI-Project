@@ -149,11 +149,19 @@ Duplicate the `src/config.example.h` file, rename it to `src/config.h`, and fill
 ### Thinkercad Simulation
 <img width="797" height="692" alt="image" src="https://github.com/user-attachments/assets/ab2b11c4-85b9-4534-a5b9-e7df508f30ff" />
 
+### Entry Registrs on Serial Monitor
+<img width="630" height="205" alt="image" src="https://github.com/user-attachments/assets/23929b05-9d59-4816-bd89-e418bccc740a" />
+
+### Exit Registers on Serial Monitor
+<img width="625" height="201" alt="image2" src="https://github.com/user-attachments/assets/2980a7e3-b0ed-41dc-a2fe-065bca7d0907" />
+
+
+
 
 
 ## Authors (Team Members) 
 
-Alanna Santos - Hardware & Wiring Specialist - GitHub 
+Alanna Santos - Software & Front-end - GitHub 
 
 Arthur Félix - Hardware & Wiring Specialist - GitHub 
 
@@ -161,8 +169,8 @@ César Kauan - Embedded Software & MQTT Config - GitHub
 
 Giselly Rocha - Cloud Dashboard & Documentation - GitHub
 
-Jhonata Teles - Embedded Software & MQTT Config - GitHub 
+Jhonata Teles - Hardware & Wiring Specialist - GitHub 
 
-Robson Barreto - Hardware & Wiring Specialist - GitHub 
+Robson Barreto - Embedded Software & MQTT Config - GitHub 
 
 Project Mentor: Arnott Caiado
