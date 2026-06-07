@@ -1,7 +1,7 @@
 # FlowSense - PI-Project
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) [![Hardware](https://img.shields.io/badge/hardware-ESP32%20%7C%20Arduino-orange)](https://www.espressif.com/en/products/socs/esp32) [![Arduino](https://img.shields.io/badge/IDE-Arduino-blue)](https://arduino.org/) 
 
-[Requirements documentation](https://senacpernambuco-my.sharepoint.com/:w:/r/personal/giselly_lima_edu_pe_senac_br/Documents/Requisitos%20de%20Sistema.docx?d=wf4bab07e0e574bdf84d5feb99323ba74&csf=1&web=1&e=VHn55A)
+[Requirements documentation](https://senacpernambuco-my.sharepoint.com/:w:/g/personal/giselly_lima_edu_pe_senac_br/IQB-sLr0Vw7fS4TV_rmTI7p0ASHDwf-_ZBK5nmNm988gOq4?e=0D9xDY)
 
 ### Class: tad40
 ## Professors and Ucs:
